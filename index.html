@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Kuliah Modern - Universitas Cendekia Abditama</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0f172a',
+                            900: '#0a1120',
+                            950: '#050a14',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800 antialiased selection:bg-gold-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-navy-900 text-gold-400 rounded-lg flex items-center justify-center font-bold text-xl shadow-md">
+                        <img src="img/images.png" alt="logo fakultas Tarbiyah">
+                    </div>
+                    <div>
+                        <span class="block font-serif text-lg font-bold text-navy-900 tracking-wide uppercase leading-none">Pendidikan Agama Islam</span>
+                        <span class="block text-xs text-gold-600 font-semibold tracking-widest uppercase">Fakultas Tarbiyah & Ilmu Keguruan </span>
+                    </div>
+                </div>
+
+                <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm text-gray-700">
+                    <a href="#" class="text-navy-900 font-semibold hover:text-gold-600 transition">Beranda</a>
+                    <a href="#jadwal" class="hover:text-gold-600 transition">Jadwal Kuliah</a>
+                    <a href="#materi" class="hover:text-gold-600 transition">Materi & Silabus</a>
+                    <a href="#" class="hover:text-gold-600 transition">Akademik</a>
+                    <a href="#" class="hover:text-gold-600 transition">Fasilitas</a>
+                </nav>
+
+                <div class="hidden sm:flex items-center space-x-4">
+                    <button id="tombol-cari" class="p-2 text-gray-500 hover:text-navy-900 transition">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <button id="btn-profil" class="bg-navy-900 hover:bg-navy-800 text-white font-medium text-sm px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition flex items-center space-x-2">
+                        <span>Profil Pengembang</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative min-h-[580px] flex items-center justify-center bg-navy-950 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLjxGrh3Xx0gRW3Q0rLbWCn0Mf-hDL8BQVkRi9dny5YlCMBZ3VwJRJLT2y&s=10" 
+                     alt="Campus Background" 
+                     class="w-full h-full object-cover object-center scale-105 transform">
+            </div>
+
+            <div class="absolute inset-0 z-10 bg-gradient-to-r from-navy-950/90 via-navy-900/80 to-transparent backdrop-blur-[3px]"></div>
+
+            <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+                <div class="max-w-2xl">
+                    <span class="inline-block px-3 py-1 bg-gold-500/20 text-gold-400 border border-gold-500/30 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">
+                        Semester Tiga
+                    </span>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                        Kelola Jadwal & <br>
+                        <span class="text-gold-400">Akses Materi Kuliah</span>
+                    </h1>
+                    <p class="text-gray-300 text-base sm:text-lg mb-8 font-light leading-relaxed">
+                        Website untuk memantau agenda perkuliahan harian, ruang kelas, dosen pengampu, serta unduh modul pembelajaran secara terintegrasi dan real-time.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#jadwal" class="bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold px-6 py-3.5 rounded-lg shadow-lg hover:shadow-gold-500/20 transition flex items-center space-x-2">
+                            <span>Lihat Jadwal Saya</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <a href="#materi" class="bg-white/10 hover:bg-white/20 text-white font-medium px-6 py-3.5 rounded-lg backdrop-blur-md border border-white/20 transition flex items-center space-x-2">
+                            <span>Login</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative z-30 -mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-8 grid grid-cols-2 lg:grid-cols-5 gap-6 divide-y lg:divide-y-0 lg:divide-x divide-gray-100">
+
+                <div class="flex items-center space-x-4 pt-2 lg:pt-0">
+                    <div>
+                        <h4 class="text-2xl font-bold text-amber-500">22 SKS</h4>
+                        <p class="text-xs text-gray-500 font-medium">Beban Studi Aktif</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4 pt-4 lg:pt-0 lg:pl-6">
+                    <div>
+                        <h4 class="text-2xl font-bold text-amber-500">8 Matkul</h4>
+                        <p class="text-xs text-gray-500 font-medium">Total Per Minggu</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4 pt-4 lg:pt-0 lg:pl-6">
+                    <div>
+                        <h4 class="text-2xl font-bold text-amber-500">Gedung B</h4>
+                        <p class="text-xs text-gray-500 font-medium">Pusat Perkuliahan</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4 pt-4 lg:pt-0 lg:pl-6">
+                    <div>
+                        <h4 class="text-2xl font-bold text-amber-500">95%</h4>
+                        <p class="text-xs text-gray-500 font-medium">Tingkat Kehadiran</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4 pt-4 lg:pt-0 lg:pl-6 col-span-2 lg:col-span-1">
+                    <div>
+                        <h4 class="text-2xl font-bold text-amber-500">IPK 4.00</h4>
+                        <p class="text-xs text-gray-500 font-medium">Prestasi Semester</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Jadwal Kuliah -->
+        <section id="jadwal" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-16">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 border-b border-gray-200 pb-4">
+                <div>
+                    <span class="text-gold-600 font-semibold text-xs uppercase tracking-widest block mb-1">Jadwal Perkuliahan</span>
+                    <h2 class="font-serif text-3xl font-bold text-navy-900">Mata Kuliah Semester 3</h2>
+                </div>
+
+                <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                    <button class="px-4 py-2 bg-navy-900 text-white rounded-lg text-xs font-semibold shadow">Semua Hari</button>
+                    <button class="px-4 py-2 bg-white text-gray-600 hover:bg-amber-600 rounded-lg hover:text-white text-xs font-semibold border border-gray-200 transition">Senin</button>
+                    <button class="px-4 py-2 bg-white text-gray-600 hover:bg-amber-600 hover:text-white rounded-lg text-xs font-semibold border border-gray-200 transition">Selasa</button>
+                    <button class="px-4 py-2 bg-white hover:text-white text-gray-600 hover:bg-amber-600 rounded-lg text-xs font-semibold border border-gray-200 transition">Rabu</button>
+                    <button class="px-4 py-2 bg-white hover:text-white text-gray-600 hover:bg-amber-600 rounded-lg text-xs font-semibold border border-gray-200 transition">Kamis</button>
+                    <button class="px-4 py-2 bg-white hover:text-white text-gray-600 hover:bg-amber-600 rounded-lg text-xs font-semibold border border-gray-200 transition">Jumat</button>
+                </div>
+            </div>
+
+            <!-- Pembungkus Kartu -->
+            <div class="flex overflow-x-auto space-x-6 pb-6 pt-2 scrollbar-thin scrollbar-thumb-navy-900 scrollbar-track-gray-200 snap-x">
+
+                <!-- Kartu ke 1 -->
+                <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden flex flex-col justify-between group min-w-[300px] sm:min-w-[350px] snap-center">
+                    <div>
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://kubuku.id/api/generic/showCover/BK76949" 
+                                 alt="Filsafat Ilmu" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-navy-900/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                Senin | 08.00 - 10.30 WIB
+                            </div>
+                            <div class="absolute top-3 right-3 bg-gold-500 text-navy-950 font-bold text-xs px-2.5 py-1 rounded">
+                                3 SKS
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-gold-600 transition mb-2">
+                                Filsafat Ilmu
+                            </h3>
+                            <p class="text-gray-500 text-xs mb-4 flex items-center space-x-2">
+                                <i class="fa-solid fa-chalkboard-user text-gold-600"></i>
+                                <span>Neneng Alawiyah, M.Pd</span>
+                            </p>
+
+                            <div class="space-y-2 border-t border-gray-100 pt-4 text-xs text-gray-600">
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-gray-400"></i> Ruang Kelas:</span>
+                                    <span class="font-semibold text-navy-900">Gedung B-402</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-bookmark text-gray-400"></i> Kode Matkul:</span>
+                                    <span class="font-semibold text-navy-900">2KA01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 grid grid-cols-2 gap-3 mt-4">
+                        <a href="#" class="bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Detail Jadwal</span>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gold-500 hover:text-navy-950 text-gray-700 text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>Detail Materi</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Kartu ke 2 -->
+                <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden flex flex-col justify-between group min-w-[300px] sm:min-w-[350px] snap-center">
+                    <div>
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcQThit7AEczxsig843UWz3-LTcctV2622d1_oGUxRj4v8dPD6Uj_9oHE&s=10" 
+                                 alt="Bimbingan Konseling" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-navy-900/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                Selasa | 10.31 - 12.30 WIB
+                            </div>
+                            <div class="absolute top-3 right-3 bg-gold-500 text-navy-950 font-bold text-xs px-2.5 py-1 rounded">
+                                3 SKS
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-gold-600 transition mb-2">
+                                Bimbingan dan Konseling
+                            </h3>
+                            <p class="text-gray-500 text-xs mb-4 flex items-center space-x-2">
+                                <i class="fa-solid fa-chalkboard-user text-gold-600"></i>
+                                <span>Irma Budiana, MA</span>
+                            </p>
+
+                            <div class="space-y-2 border-t border-gray-100 pt-4 text-xs text-gray-600">
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-gray-400"></i> Ruang Kelas:</span>
+                                    <span class="font-semibold text-navy-900">Ruang B-402</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-bookmark text-gray-400"></i> Kode Matkul:</span>
+                                    <span class="font-semibold text-navy-900">2KA01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 grid grid-cols-2 gap-3 mt-4">
+                        <a href="#" class="bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Detail Jadwal</span>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gold-500 hover:text-navy-950 text-gray-700 text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>Detail Materi</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Kartu ke 3 -->
+                <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden flex flex-col justify-between group min-w-[300px] sm:min-w-[350px] snap-center">
+                    <div>
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtFY6W5P-oAMUIOSfPVtxN6T3U8UuHXvtSgSjfEydWf6aIV15kYxt9E8MP&s=10" 
+                                 alt="Ushulul Fiqh" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-navy-900/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                Rabu | 08.00 - 10.30 WIB
+                            </div>
+                            <div class="absolute top-3 right-3 bg-gold-500 text-navy-950 font-bold text-xs px-2.5 py-1 rounded">
+                                3 SKS
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-gold-600 transition mb-2">
+                                Ushulul Fiqh dan Kaidah Fiqhiyah
+                            </h3>
+                            <p class="text-gray-500 text-xs mb-4 flex items-center space-x-2">
+                                <i class="fa-solid fa-chalkboard-user text-gold-600"></i>
+                                <span>Dr. Fauzi Al-Mubarok, M.Ag</span>
+                            </p>
+
+                            <div class="space-y-2 border-t border-gray-100 pt-4 text-xs text-gray-600">
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-gray-400"></i> Ruang Kelas:</span>
+                                    <span class="font-semibold text-navy-900">Ruang B-402</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-bookmark text-gray-400"></i> Kode Matkul:</span>
+                                    <span class="font-semibold text-navy-900">2KA01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 grid grid-cols-2 gap-3 mt-4">
+                        <a href="#" class="bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Detail Jadwal</span>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gold-500 hover:text-navy-950 text-gray-700 text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>Detail Materi</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Kartu ke 4 -->
+                <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden flex flex-col justify-between group min-w-[300px] sm:min-w-[350px] snap-center">
+                    <div>
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnDoJR_V7G_nqcezagiHE_KfJ7AoT_KS5_aj5Eyqvjqq6kni5xub_G-7e4&s=10" 
+                                 alt="Ushulul Fiqh" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-navy-900/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                Rabu | 08.00 - 10.30 WIB
+                            </div>
+                            <div class="absolute top-3 right-3 bg-gold-500 text-navy-950 font-bold text-xs px-2.5 py-1 rounded">
+                                3 SKS
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-gold-600 transition mb-2">
+                                Kepemimpinan Pendidikan Islam
+                            </h3>
+                            <p class="text-gray-500 text-xs mb-4 flex items-center space-x-2">
+                                <i class="fa-solid fa-chalkboard-user text-gold-600"></i>
+                                <span>Ahmad Buchori Muslim, M.Pd.I</span>
+                            </p>
+
+                            <div class="space-y-2 border-t border-gray-100 pt-4 text-xs text-gray-600">
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-gray-400"></i> Ruang Kelas:</span>
+                                    <span class="font-semibold text-navy-900">Ruang B-402</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-bookmark text-gray-400"></i> Kode Matkul:</span>
+                                    <span class="font-semibold text-navy-900">2KA01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 grid grid-cols-2 gap-3 mt-4">
+                        <a href="#" class="bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Detail Jadwal</span>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gold-500 hover:text-navy-950 text-gray-700 text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>Detail Materi</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Kartu Ke 5 -->
+                <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden flex flex-col justify-between group min-w-[300px] sm:min-w-[350px] snap-center">
+                    <div>
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://penerbitazkapustaka.com/wp-content/uploads/2023/01/WhatsApp-Image-2023-01-23-at-19.21.44-1.jpeg" 
+                                 alt="Ushulul Fiqh" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-navy-900/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                Kamis | 08.00 - 10.30 WIB
+                            </div>
+                            <div class="absolute top-3 right-3 bg-gold-500 text-navy-950 font-bold text-xs px-2.5 py-1 rounded">
+                                3 SKS
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-gold-600 transition mb-2">
+                                Etika Profesi Keguruan
+                            </h3>
+                            <p class="text-gray-500 text-xs mb-4 flex items-center space-x-2">
+                                <i class="fa-solid fa-chalkboard-user text-gold-600"></i>
+                                <span>Dr. Siti Maryam, MA</span>
+                            </p>
+
+                            <div class="space-y-2 border-t border-gray-100 pt-4 text-xs text-gray-600">
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-gray-400"></i> Ruang Kelas:</span>
+                                    <span class="font-semibold text-navy-900">Ruang B-402</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-bookmark text-gray-400"></i> Kode Matkul:</span>
+                                    <span class="font-semibold text-navy-900">2KA01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 grid grid-cols-2 gap-3 mt-4">
+                        <a href="#" class="bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Detail Jadwal</span>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gold-500 hover:text-navy-950 text-gray-700 text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>Detail Materi</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Kartu  Ke 6 -->
+                <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden flex flex-col justify-between group min-w-[300px] sm:min-w-[350px] snap-center">
+                    <div>
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-TiWehMiMGyfWg6BOzznRdFdvdvlkCzjiNTYkP_nj5gtRNZNtz_m-Yd8&s=10" 
+                                 alt="Ushulul Fiqh" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-navy-900/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                Kamis | 10.30 - 12.30 WIB
+                            </div>
+                            <div class="absolute top-3 right-3 bg-gold-500 text-navy-950 font-bold text-xs px-2.5 py-1 rounded">
+                                3 SKS
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-gold-600 transition mb-2">
+                                Ulumul Hadits
+                            </h3>
+                            <p class="text-gray-500 text-xs mb-4 flex items-center space-x-2">
+                                <i class="fa-solid fa-chalkboard-user text-gold-600"></i>
+                                <span>Dr. Deden Saeful Ridhwan, MZ, MA</span>
+                            </p>
+
+                            <div class="space-y-2 border-t border-gray-100 pt-4 text-xs text-gray-600">
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-gray-400"></i> Ruang Kelas:</span>
+                                    <span class="font-semibold text-navy-900">Ruang B-402</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-bookmark text-gray-400"></i> Kode Matkul:</span>
+                                    <span class="font-semibold text-navy-900">2KA01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 grid grid-cols-2 gap-3 mt-4">
+                        <a href="#" class="bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Detail Jadwal</span>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gold-500 hover:text-navy-950 text-gray-700 text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>Detail Materi</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Kartu ke 7 -->
+                <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden flex flex-col justify-between group min-w-[300px] sm:min-w-[350px] snap-center">
+                    <div>
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrhV4n3VLSW7MqX1DfcVyxzF46BlDcfu9Av0B190DkIP62e4DkNfRz0qMe&s=10" 
+                                 alt="Ushulul Fiqh" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-navy-900/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                Selasa | 08.00 - 10.30 WIB
+                            </div>
+                            <div class="absolute top-3 right-3 bg-gold-500 text-navy-950 font-bold text-xs px-2.5 py-1 rounded">
+                                3 SKS
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-gold-600 transition mb-2">
+                                Akhlak Ilmu Tasawuf
+                            </h3>
+                            <p class="text-gray-500 text-xs mb-4 flex items-center space-x-2">
+                                <i class="fa-solid fa-chalkboard-user text-gold-600"></i>
+                                <span>Dr. Latifatul Khasanah, MA., MHSE</span>
+                            </p>
+
+                            <div class="space-y-2 border-t border-gray-100 pt-4 text-xs text-gray-600">
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-gray-400"></i> Ruang Kelas:</span>
+                                    <span class="font-semibold text-navy-900">Ruang B-402</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-bookmark text-gray-400"></i> Kode Matkul:</span>
+                                    <span class="font-semibold text-navy-900">2KA01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 grid grid-cols-2 gap-3 mt-4">
+                        <a href="#" class="bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Detail Jadwal</span>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gold-500 hover:text-navy-950 text-gray-700 text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>Detail Materi</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Kartu ke 8 -->
+                <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden flex flex-col justify-between group min-w-[300px] sm:min-w-[350px] snap-center">
+                    <div>
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa4gjkfciqiX-UvzQW6Bt1P4N8Wsh9K_bHw9oBMF2r6RBdSYEY5sA5TtM3&s=10" 
+                                 alt="Ushulul Fiqh" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 left-3 bg-navy-900/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                Rabu | 08.00 - 10.30 WIB
+                            </div>
+                            <div class="absolute top-3 right-3 bg-gold-500 text-navy-950 font-bold text-xs px-2.5 py-1 rounded">
+                                3 SKS
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-gold-600 transition mb-2">
+                                Tafsir Tarbawi
+                            </h3>
+                            <p class="text-gray-500 text-xs mb-4 flex items-center space-x-2">
+                                <i class="fa-solid fa-chalkboard-user text-gold-600"></i>
+                                <span>Dr. Muhyiddin Tahir Tamimi, MA</span>
+                            </p>
+
+                            <div class="space-y-2 border-t border-gray-100 pt-4 text-xs text-gray-600">
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-gray-400"></i> Ruang Kelas:</span>
+                                    <span class="font-semibold text-navy-900">Ruang B-402</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-2"><i class="fa-solid fa-bookmark text-gray-400"></i> Kode Matkul:</span>
+                                    <span class="font-semibold text-navy-900">2KA01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 grid grid-cols-2 gap-3 mt-4">
+                        <a href="#" class="bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Detail Jadwal</span>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gold-500 hover:text-navy-950 text-gray-700 text-xs font-semibold py-2.5 px-3 rounded-lg text-center transition flex items-center justify-center space-x-1.5">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>Detail Materi</span>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECTION PENGUMUMAN -->
+        <section id="pengumuman" class="bg-slate-200/60 py-16">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <span class="text-gold-600 text-center font-semibold text-xs uppercase tracking-widest block mb-1">Informasi</span>
+                <h2 class="font-serif text-2xl text-center font-bold text-navy-900 mb-6">Pengumuman</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                    <div>
+
+                        <div class="bg-navy-900 text-white rounded-xl p-6 shadow-md border border-navy-800">
+                            <ul class="space-y-4">
+                                <li class="pb-4 border-b border-navy-800">
+                                    <span class="text-xs text-gold-400 font-medium">12 Oktober 2026</span>
+                                    <h4 class="text-sm font-semibold text-white mt-1 hover:underline cursor-pointer">Jadwal Ujian Tengah Semester (UTS) Genap</h4>
+                                    <p class="text-xs text-gray-400 mt-1">UTS akan dilaksanakan secara luring mulai minggu depan.</p>
+                                </li>
+                                <li>
+                                    <span class="text-xs text-gold-400 font-medium">08 Oktober 2026</span>
+                                    <h4 class="text-sm font-semibold text-white mt-1 hover:underline cursor-pointer">Perubahan Ruang Kuliah AI & Machine Learning</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Dipindahkan sementara ke Lab Komputer Utama Gedung C.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="bg-navy-900 text-white rounded-xl p-6 shadow-md border border-navy-800">
+                            <ul class="space-y-4">
+                                <li class="pb-4 border-b border-navy-800">
+                                    <span class="text-xs text-gold-400 font-medium">12 Oktober 2026</span>
+                                    <h4 class="text-sm font-semibold text-white mt-1 hover:underline cursor-pointer">Jadwal Ujian Tengah Semester (UTS) Genap</h4>
+                                    <p class="text-xs text-gray-400 mt-1">UTS akan dilaksanakan secara luring mulai minggu depan.</p>
+                                </li>
+                                <li>
+                                    <span class="text-xs text-gold-400 font-medium">08 Oktober 2026</span>
+                                    <h4 class="text-sm font-semibold text-white mt-1 hover:underline cursor-pointer">Perubahan Ruang Kuliah AI & Machine Learning</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Dipindahkan sementara ke Lab Komputer Utama Gedung C.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="bg-navy-900 text-white rounded-xl p-6 shadow-md border border-navy-800">
+                            <ul class="space-y-4">
+                                <li class="pb-4 border-b border-navy-800">
+                                    <span class="text-xs text-gold-400 font-medium">12 Oktober 2026</span>
+                                    <h4 class="text-sm font-semibold text-white mt-1 hover:underline cursor-pointer">Jadwal Ujian Tengah Semester (UTS) Genap</h4>
+                                    <p class="text-xs text-gray-400 mt-1">UTS akan dilaksanakan secara luring mulai minggu depan.</p>
+                                </li>
+                                <li>
+                                    <span class="text-xs text-gold-400 font-medium">08 Oktober 2026</span>
+                                    <h4 class="text-sm font-semibold text-white mt-1 hover:underline cursor-pointer">Perubahan Ruang Kuliah AI & Machine Learning</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Dipindahkan sementara ke Lab Komputer Utama Gedung C.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-gray-400 pt-16 pb-8 border-t border-navy-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-navy-900">
+                <!-- Col 1 -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8  text-navy-950 rounded flex items-center justify-center font-bold text-lg">
+                            <img src="img/images.png" alt="logo universitas Cendekia Abditama">
+                        </div>
+                        <span class="font-serif text-lg font-bold text-white tracking-wide">UNIVERSITAS CENDEKIA ABDITAMA</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                        Mewujudkan kemudahan diriku untuk melihat jadwal perkuliahan. keunggulannya hemat waktu dan efisiensi.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4 border-b border-gold-500/30 pb-2 inline-block">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-gold-400 transition">Jadwal Perkuliahan</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition">Portal Akademik Mahasiswa</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition">Perpustakaan Digital</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition">Kalender Akademik</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4 border-b border-gold-500/30 pb-2 inline-block">Layanan Mahasiswa</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-gold-400 transition">Pusat Bantuan / Helpdesk</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition">Pengajuan Beasiswa</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition">Layanan Konseling</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition">Sertifikasi & Pelatihan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4 border-b border-gold-500/30 pb-2 inline-block">Kontak Kampus</h4>
+                    <p class="text-xs text-gray-400 mb-2"><i class="fa-solid fa-envelope text-gold-500 mr-2"></i> akademik@northridge.ac.id</p>
+                    <p class="text-xs text-gray-400 mb-2"><i class="fa-solid fa-phone text-gold-500 mr-2"></i> (021) 555-0192</p>
+                    <p class="text-xs text-gray-400"><i class="fa-solid fa-location-dot text-gold-500 mr-2"></i> Jl. Universitas Raya No. 1</p>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>&copy; 2026 Handika Saputra. Hak Cipta Dilindungi.</p>
+                <div class="flex space-x-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- MODAL PROFIL (Hidden by default) -->
+<div id="modal-profil" class="modal-profil hidden fixed inset-0 z-50 flex items-center justify-center bg-navy-950/80 backdrop-blur-sm">
+    <!-- Kartu Profil -->
+    <div class="bg-white w-full max-w-sm mx-4 rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+        
+        <div class="w-full h-72 overflow-hidden">
+            <img src="img/profilPengembang.jpeg">
+        </div>
+
+        <div class="p-6 flex flex-col gap-3 text-sm text-gray-800">
+            
+            <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-500">Nama</span>
+                <span class="font-bold text-navy-900">Handika Saputra</span>
+            </div>
+
+            <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-500">NIM</span>
+                <span class="font-bold text-navy-900">2524110035</span>
+            </div>
+
+            <div class="flex justify-between items-center">
+                <span class="font-semibold text-gray-500">Jurusan</span>
+                <span class="font-bold text-navy-900 text-right">Pendidikan Agama Islam</span>
+            </div>
+        </div>
+
+        <div class="px-6 pb-6">
+            <button id="detail-profil" class="w-full bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold py-3 px-4 rounded-lg shadow-md transition">
+                Lihat Detail Profil
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
