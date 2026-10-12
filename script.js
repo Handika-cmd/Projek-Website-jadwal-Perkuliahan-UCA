@@ -27,3 +27,26 @@ modalLogin.addEventListener("click", function(e){
     modalLogin.classList.add("hidden");
   }
 });
+
+// Ambil elemen search panel dan tombol-tombolnya
+const tombolCari = document.querySelector('#tombol-cari');
+const searchPanel = document.querySelector('#search-panel');
+const tutupSearch = document.querySelector('#tutup-search');
+
+// Klik ikon 🔍 → panel muncul/sembunyi
+tombolCari.addEventListener('click', (e) => {
+    e.stopPropagation(); // ← cegah klik ini nyebar ke document
+    searchPanel.classList.toggle('aktif');
+});
+
+// Klik tombol X → panel sembunyi
+tutupSearch.addEventListener('click', () => {
+    searchPanel.classList.remove('aktif');
+});
+
+// Klik di luar panel → panel sembunyi
+document.addEventListener('click', (e) => {
+    if (!searchPanel.contains(e.target)) {
+        searchPanel.classList.remove('aktif');
+    }
+});

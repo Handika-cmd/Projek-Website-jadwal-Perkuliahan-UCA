@@ -33,6 +33,23 @@
             }
         }
     </script>
+
+    <style>
+        /* Search panel sembunyi by default — geser ke kanan */
+    #search-panel {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+        transform: translateX(20px); /* ← geser ke kanan dulu */
+        pointer-events: none;
+    }
+
+    /* Search panel muncul — slide masuk dari kanan */
+    #search-panel.aktif {
+        opacity: 1;
+        transform: translateX(0); /* ← balik ke posisi normal */
+        pointer-events: auto;
+    }
+    </style>
 </head>
 <body class="bg-gray-100 font-sans text-gray-800 antialiased selection:bg-gold-500 selection:text-white">
 
@@ -730,8 +747,8 @@
         
         <!-- Header Kartu Login -->
         <div class="bg-navy-900 p-6 text-center">
-            <h3 class="font-serif text-xl font-bold text-white">Login Mahasiswa</h3>
-            <p class="text-gray-400 text-xs mt-1">Silakan masuk untuk mengakses fitur lengkap</p>
+            <h3 class="font-serif text-xl font-bold text-white">Login</h3>
+            <p class="text-gray-400 text-xs mt-1">Silakan masuk Sebagai Handika Saputra</p>
         </div>
 
         <!-- Isi Form Login -->
@@ -756,6 +773,24 @@
         </div>
     </div>
 </div>
+
+    <!-- Search Panel Mengambang -->
+    <div id="search-panel" class="fixed top-24 right-4 z-40 w-72">
+        <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-100 px-4 py-3 flex items-center gap-3">
+            <i class="fa-solid fa-magnifying-glass text-gold-500"></i>
+            <input 
+                type="text" 
+                placeholder="Cari mata kuliah, dosen..." 
+                class="flex-1 bg-transparent text-sm text-navy-900 font-medium placeholder-gray-400 focus:outline-none"
+            >
+            <button id="tutup-search" class="text-gray-400 hover:text-navy-900 transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
 
 <script src="script.js"></script>
 </body>
